@@ -1,0 +1,252 @@
+# 1. Create three variables in a single line and assign values to them in such a manner that each one of them belongs to a different data type.
+
+def variables():
+    a, b, c = 5, "Hi", True
+    print(a)
+    print(b)
+    print(c)
+
+# 2. Create a variable of type complex and swap it with another variable of type integer.
+
+def swapComplex():
+    complexNum = 3 + 4j
+    intNum = 5
+    tmp = 0
+    tmp = complexNum
+    complexNum = intNum
+    intNum = tmp
+
+# 3. Swap two numbers using a third variable and do the same task without using any third variable.
+
+def swap():
+    complexNum = 3 + 4j
+    intNum = 5
+    complexNum, intNum = intNum, complexNum
+
+# 4. Write a program that takes input from the user and prints it using both Python 2.x and Python 3.x Version.
+
+def inputPrint():
+    a = input("Enter the value of a: ")
+    b = input_raw("Enter the value of b: ")
+    print(a)
+    print(b)
+
+# 5. Write a program to complete the task given below:
+# Ask users to enter any 2 numbers in between 1-10 , add the two numbers and keep the sum in another variable called z. Add 30 to z and store the output in variable result and print result as the final output.
+
+def add():
+    print("Choose two numbers between 1-10")
+    a = eval(input("Enter value of first number: "))
+    b = eval(input("Enter the value of second number: "))
+    z = a + b
+    result = z + 30
+    print(result)
+
+# 6. Write a program to check the data type of the entered values.
+# HINT: Printed output should say - The data type of the input value is : int/float/string/etc
+
+def dataType():
+    a = eval(input("Enter the value of a: "))
+    if isinstance(a, int):
+        typeVariable = "int"
+    elif isinstance(a, str):
+        typeVariable = "str"
+    elif isinstance(a, bool):
+        typeVariable = "boolean"
+    elif isinstance(a, float):
+        typeVariable = "float"
+    elif isinstance(a, complex):
+        typeVariable = "complex"
+    print("The data type of the input value is: " + typeVariable)
+
+# 7. Create Variables using formats such as Upper CamelCase, Lower CamelCase, SnakeCase and UPPERCASE.
+
+def variableFormats():
+    addTwo = 2
+    AddThree = 3
+    add_four = 4
+    ADDFIVE = 5
+
+# 8. If one data type value is assigned to ‘a’ variable and then a different data type value is assigned to ‘a’ again. Will it change the value? If Yes then Why?
+
+def differentDataType():
+    a = 5
+    a = "Hi"
+    print(a)
+# Answer: Yes, it is possible to reassign the value of 'a' to that of a different data type because it's possible to override the assignment
+
+# 1. Write a program in Python to perform the following operation:
+# If a number is divisible by 3 it should print “Consultadd” as a string
+# If a number is divisible by 5 it should print “Python Training” as a string
+# If a number is divisible by both 3 and 5 it should print “Consultadd - Python Training” as a string.
+
+def consultadd():
+    a = eval(input("Enter a number: "))
+    if a % 15 == 0:
+        print("Consultadd - Python Training")
+    elif a % 3 == 0:
+        print("Consultadd")
+    elif a % 5 == 0:
+        print("Python Training")
+
+# 2. Write a program in Python to perform the following operator based task: Ask user to choose the following option first:
+# If User Enter 1 - Addition
+# If User Enter 2 - Subtraction
+# If User Enter 3 - Division
+# If User Enter 4 - Multiplication If User Enter 5 - Average
+# Ask user to enter two numbers and keep those numbers in variables num1 and num2 respectively for the first 4 options mentioned above.
+# Ask the user to enter two more numbers as first and second for calculating the average as soon as the user chooses an option 5.
+# At the end if the answer of any operation is Negative print a statement saying “NEGATIVE” NOTE: At a time a user can only perform one action.
+
+def operatorTask():
+    print("""
+    Press 1: Add
+    Press 2: Subtraction
+    Press 3: Division
+    Press 4: Multiplication
+    Press 5: Average
+    """)
+    press = eval(input("Enter a value between 1 - 5: "))
+    num1 = eval(input("Enter a number: "))
+    num2 = eval(input("Enter a number: "))
+    answer = 0
+    if press == 1:
+        answer = num1 + num2
+    elif press == 2:
+        answer = num1 - num2
+    elif press == 3:
+        answer = num1/num2
+    elif press == 4:
+        answer = num1 * num2
+    elif press == 5:
+        answer = (num1 + num2)/2
+    if answer < 0:
+        print("NEGATIVE")
+
+# 3. Write a program in Python to implement the given flowchart
+
+def flowchart():
+    a = 10
+    b = 20
+    c = 30
+    avg = (a + b + c)/3
+    print("avg=", avg)
+    if avg > a and avg > b and avg > c:
+        print("avg is higher than a,b,c")
+    else:
+        if avg > a and avg > b:
+            print("avg is higher than a and b")
+        elif avg > a and avg > c:
+            print("avg is higher than a and c")
+        elif avg > b and avg > c:
+            print("avg is higher than b and c")
+        elif avg > a:
+            print("avg is just higher than a")
+        elif avg > b:
+            print("avg is just higher than b")
+        elif avg > c:
+            print("avg is just higher than c")
+
+# 4. Write a program in Python to break and continue if the following cases occurs:
+# If user enters a negative number just break the loop and print “It’s Over”
+# If user enters a positive number just continue in the loop and print “Good Going”
+
+def program():
+    while True:
+        number = eval(input("Enter a number: "))
+        if number < 0:
+            print("It's Over")
+            break
+        elif number > 0:
+            print("Good Going")
+            continue
+
+# 5. Write a program in Python which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200.
+
+def divisibleBySeven():
+    for number in range(2000, 3201):
+        if (number % 7 == 0) and (number % 5 != 0):
+            print(number)
+
+# 6. What is the output of the following code examples?
+
+# a) It throws an error saying: TypeError: 'int' object is not iterable
+# b) 0 error 1 error 2 error
+# c) 0 1 2 3 4
+
+# 7. Write a program that prints all the numbers from 0 to 6 except 3 and 6. Expected output: 0 1 2 4 5
+# Note: Use ‘continue’ statement
+
+def printNums():
+    for i in range(0,7):
+        if i == 3 or i == 6:
+            continue
+        else:
+            print(i)
+
+# 8. Write a program that accepts a string as an input from the user and calculate the number of digits and letters.
+
+def calculate():
+    digits = 0
+    letters = 0
+    string = input("Enter a string: ")
+    for character in string:
+        if character.isdigit():
+            digits += 1
+        elif character.isalpha:
+            letters += 1
+        else:
+            pass
+    print("Letters", letters)
+    print("Digits", digits)
+
+# 9. Read the two parts of the question below:
+# Write a program such that it asks users to “guess the lucky number”. If the correct number is guessed the program stops, otherwise it continues forever.
+# Modify the program so that it asks users whether they want to guess again each time. Use two variables, ‘number’ for the number and ‘answer’ for the answer to the question whether they want to continue guessing. The program stops if the user guesses the correct number or answers “no”. ( The program continues as long as a user has not answered “no” and has not guessed the correct number)
+
+def guess():
+    number = 42
+    while True:
+        guessed = eval(input("guess the lucky number: "))
+        if guessed == number:
+            break
+        else:
+            answer = input("do you want to continue guessing (yes/no)? ")
+            if answer == "no":
+                break
+
+# 10. Write a program that asks five times to guess the lucky number. Use a while loop and a counter, such as
+# counter=1
+# While counter <= 5:
+# print(“Type in the”, counter, “number”
+# counter=counter+1
+# The program asks for five guesses (no matter whether the correct number was guessed or not). If the correct number is guessed, the program outputs “Good guess!”, otherwise it outputs “Try again!”. After the fifth guess it stops and prints “Game over!”.
+
+def luckyNumber():
+    correctNumber = 56
+    counter = 1
+    while counter <= 5:
+        answer = eval(input("Type in the number: "))
+        if answer == correctNumber:
+            print("Good guess!")
+        elif answer != correctNumber and counter != 5:
+            print("Try again!")
+        counter += 1
+    print("Game over!")
+
+# 11. In the previous question, insert break after the “Good guess!” print statement. break will terminate the while loop so that users do not have to continue guessing after they found the number. If the user does not guess the number at all, print “Sorry but that was not very successful”.
+
+def luckyNumber2():
+    correctNumber = 56
+    counter = 1
+    while counter <= 5:
+        answer = eval(input("Type in the number: "))
+        if answer == correctNumber:
+            print("Good guess!")
+            break
+        elif answer != correctNumber and counter != 5:
+            print("Try again!")
+        elif answer != correctNumber and counter == 5:
+            print("Sorry but that was not very successful")
+        counter += 1
+    print("Game over!")

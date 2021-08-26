@@ -1,0 +1,267 @@
+# TASK THREE
+
+# 1. Create a list of 10 elements of four different data types like int, string, complex and float.
+
+def createList():
+    my_list = [1, 2, 3, "hi", 3 + 5j, 4, 5, 5.4, 6.5]
+    print(my_list)
+
+# 2. Create a list of size 5 and execute the slicing structure
+
+def createList2():
+    my_list = [None] * 5
+    print(my_list[:3])
+
+# 3. Write a program to get the sum and multiply of all the items in a given list.
+
+def sumAndMultiply(l):
+    totalSum = sum(l)
+    multiplied = 1
+    for number in l:
+        multiplied *= number
+    print(totalSum)
+    print(multiplied)
+
+# 4. Find the largest and smallest number from a given list.
+
+def minAndMax(l):
+    minimum = min(l)
+    maximum = max(l)
+    print(minimum)
+    print(maximum)
+
+# 5. Create a new list which contains the specified numbers after removing the even numbers from a predefined list.
+
+def removeEvens(l):
+    new_list = []
+    for number in l:
+        if number % 2 == 0:
+            continue
+        else:
+            new_list.append(number)
+    print(new_list)
+
+# 6. Create a list of elements such that it contains the squares of the first and last 5 elements between 1 and30 (both included).
+
+def squares():
+    new_list = []
+    new_list.append(1)
+    for number in range(25,31):
+        new_list.append(number ** 2)
+    print(new_list)
+
+# 7. Write a program to replace the last element in a list with another list.
+
+def remove(l1, l2):
+    l1 = l1[:(len(l1) - 1)] + l2
+    print(l1)
+
+# 8. Create a new dictionary by concatenating the following two dictionaries
+# Sample input: a={1:10,2:20} b={3:30,4:40}
+# Expected output: {1:10,2:20,3:30,4:40}
+
+def concat(d1,d2):
+    d1.update(d2)
+    print(d1)
+
+# 9. Create a dictionary that contain numbers in the form(x:x*x) where x takes all the values between 1 and n(both 1 and n included).
+
+def square(n):
+    my_dict = {}
+    for number in range(1, n+1):
+        my_dict[number] = number * number
+    print(my_dict)
+
+# 10. Write a program which accepts a sequence of comma-separated numbers from console and generates a list and a tuple which contains every number in the form of string.
+
+def commas(s):
+    tmp = ""
+    my_list = []
+    my_tuple = ()
+    for character in s:
+        if character != ",":
+            tmp += character
+        else:
+            my_list.append(tmp)
+            my_tuple = (*my_tuple, tmp)
+            tmp = ""
+    print(my_list)
+    print(my_tuple)
+
+# TASK FOUR 
+
+# 1. Write a program to reverse a string.
+
+def reversed(s):
+    rev = s[::-1]
+    print(rev)
+    return rev
+
+# 2. Write a function that accepts a string and prints the number of uppercase letters and lowercase letters.
+
+def letters(s):
+    my_dict = {}
+    my_dict["LowerCase"] = 0
+    my_dict["UpperCase"] = 0
+    for character in s:
+        if character.islower():
+            my_dict["LowerCase"] += 1
+        if character.isupper():
+            my_dict["UpperCase"] += 1
+    lower = my_dict["LowerCase"]
+    upper = my_dict["UpperCase"]
+    print("No. of Uppercase characters : {} No. of Lowercase characters : {}".format(upper, lower))
+
+# 3. Create a function that takes a list and returns a new list with unique elements of the first list.
+
+def unique(l):
+    my_set = set(l)
+    my_list = list(my_set)
+    print(my_list)
+    return my_list
+
+# 4. Write a program that accepts a hyphen-separated sequence of words as input and prints the words
+# in a hyphen-separated sequence after sorting them alphabetically.
+
+def hyphen(sequence):
+    my_list = []
+    tmp = ""
+    sequence += "-"
+    for character in sequence:
+        if character != '-':
+            tmp += character
+        else:
+            my_list.append(tmp)
+            tmp = ""
+    sorted_list = sorted(my_list)
+    hyphenated = "-".join(sorted_list)
+    print(hyphenated)
+    return hyphenated
+
+# 5. Write a program that accepts a sequence of lines as input and prints the lines after making all characters in the sentence capitalized.
+
+def capitalize(s):
+    all_caps = ""
+    for character in s:
+        tmp = character.upper()
+        all_caps += tmp
+    print(all_caps)
+    return all_caps
+
+# 6. Define a function that can receive two integral numbers in string form and compute their sum and print it in the console.
+
+def compute():
+    n1 = input("Enter a number in string format: ")
+    n2 = input("Enter a number in string format: ")
+    totalSum = int(n1) + int(n2)
+    print(totalSum)
+    return totalSum
+
+# 7. Define a function that can accept two strings as input and print the string with the maximum length in the console. If two strings have the same length, then the function should print both the strings line by line.
+
+def maxLength():
+    s1 = eval(input("Enter your first string: "))
+    s2 = eval(input("Enter your second string: "))
+    if len(s1) > len(s2):
+        print(s1)
+    elif len(s2) > len(s1):
+        print(s1)
+    else:
+        print(s1)
+        print(s2)
+
+# 8. Define a function which can generate and print a tuple where the values are square of numbers between 1 and 20 (both 1 and 20 included).
+
+def squares2():
+    my_list = []
+    for number in range(1,21):
+        my_list.append(number * number)
+    my_tuple = tuple(my_list)
+    print(my_tuple)
+    return my_tuple
+
+# 9. Write a function called showNumbers that takes a parameter called limit. It should print all the numbers between 0 and limit with a label to identify the even and odd numbers.
+
+def showNumbers(limit):
+    for number in range(limit + 1):
+        if number % 2 == 0:
+            print("{} EVEN".format(number))
+        else:
+            print("{} ODD".format(number))
+
+# 10. Write a program which uses filter() to make a list whose elements are even numbers between 1 and 20 (both included)
+
+def evens():
+    result = list(filter(lambda x: x % 2 == 0, range(1,21)))
+    print(result)
+    return result
+
+# 11. Write a program which uses map() and filter() to make a list whose elements are squares of even numbers in [1,2,3,4,5,6,7,8,9,10].
+
+def evenSquares():
+    l = [1,2,3,4,5,6,7,8,9,10]
+    evens = list(filter(lambda x: x % 2 == 0, l))
+    result = list(map(lambda x: x*x, evens))
+    print(result)
+    return result
+
+# 12. Write a function to compute 5/0 and use try/except to catch the exceptions
+
+def divideByZero():
+    try:
+        result = 5/0
+    except:
+        print("Can't divide by 0")
+
+# 13. Flatten the list [1,2,3,4,5,6,7] into 1234567 using reduce().
+
+def flatten():
+    l = [1,2,3,4,5,6,7]
+    result = reduce(lambda a,b: str(a) + str(b), l)
+    intResult = int(result)
+    print(intResult)
+    return intResult
+
+# 14. Write a program in Python to find the values which are not divisible by 3 but are a multiple of 7.
+# Make sure to use only higher order functions.
+
+def multiples(list1):
+    result = list(filter(lambda x: x % 7 == 0 and x % 3 != 0, list1))
+    print(result)
+    return result
+
+# 15. Write a program in Python to multiply the elements of a list by itself using a traditional function and pass the function to map() to complete the operation.
+
+def multiply(num):
+    return num*num
+def useMap():
+    l1 = [1,2,3,4,5,6]
+    result = list(map(multiply, l1))
+    print(result)
+
+# 16. What is the output of the following codes: 
+# (i) def foo():
+    #try:
+        # return 1
+    # finally: 
+        # return 2
+# k = foo() 
+# print(k)
+
+# Answer: 
+# 1
+# 2
+
+# (ii) 
+# def a(): 
+    # try:
+        # f(x, 4) 
+    # finally:
+        # print('after f')
+        # print('after f?') 
+# a()
+
+# Answer
+# This will throw an error saying "name 'f' is not defined", or it'll print:
+# after f
+# after f?
