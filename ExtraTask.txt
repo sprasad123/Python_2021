@@ -1,0 +1,123 @@
+# 1. Create a list of given structure and get the Access list as provided below: x=[100,200,300,400,500,[1,2,3,4,5,[10,20,30,40,50],6,7,8,9],600,700,800] Access list: [1, 2, 3, 4]Access list: [600, 700]
+# Access list: [100, 300, 500, 600, 800]
+# Access list: [[800, 700, 600, [1, 2, 3, 4, 5, [10, 20, 30, 40, 50], 6, 7, 8, 9], 500, 400, 300, 200, 100]] Access list: [10]
+# Access list: [ ]
+
+def accessList():
+    x = [100,200,300,400,500,[1,2,3,4,5,[10,20,30,40,50],6,7,8,9],600,700,800]
+    access1 = x[5][:4]
+    print(access1)
+    access2 = x[6:8]
+    print(access2)
+    access3 = [x[i] for i in range(len(x)) if i % 2 == 0]
+    print(access3)
+    access4 = [x[::-1]]
+    print(access4)
+    access5 = x[5][5][0]
+    print(access5)
+    access6 = x.clear()
+    print(access6)
+
+# 2. Create a list of thousand numbers using range and xrange and see the difference between each other.
+
+def thousand():
+    l1 = range(1,1001)
+    print(len(l1))
+    l2 = xrange(1,1001)
+
+# 3. How Tuple is beneficial as compared to the list?
+
+# The tuple is beneficial compared to list because since the tuple is immutable, and the list is mutable, we can use a tuple as a dictionary's key but we can't use a list for that.
+
+# 4. Write a program in Python to iterate through the list of numbers in the range of 1,100 and print the number which is divisible by 3 and is a multiple of 2.
+
+def multiple():
+    for num in range(1,100):
+        if num % 3 == 0 and num % 2 == 0:
+            print(num)
+
+# 5. Write a program in Python to reverse a string and print only the vowel alphabet if it exists in the string with their index.
+
+def reversing(word):
+    rev_word = word[::-1]
+    for c in range(len(rev_word)):
+        if rev_word[c].lower() == 'a':
+            print(('a', c))
+        elif rev_word[c].lower() == 'e':
+            print(('e', c))
+        elif rev_word[c].lower() == 'i':
+            print(('i', c))
+        elif rev_word[c].lower() == 'o':
+            print(('o', c))
+        elif rev_word[c].lower() == 'u':
+            print(('u', c))
+
+# 6. Write a program in Python to iterate through the string “hello my name is abcde” and print the string which is having an even length.
+
+def even():
+    sentence = "hello my name is abcde"
+    words = sentence.split()
+    for word in words:
+        if len(word) % 2 == 0:
+            print(word)
+
+# 7. Write a program in python to print the pair of numbers whose sum is equal to the result number that is let's say 8.
+# x=[1,2,3,4,5,6,7,8,9,-1]
+
+def eight():
+    x = [1,2,3,4,5,6,7,8,9,-1]
+    for i in x:
+        for j in x:
+            if i + j == 8:
+                print(i, j)
+
+# 8. Write a program in Python to complete the following task:
+# Create two lists such as even_list and odd_list
+# Ask user to enter a number in the range of 1,50 and make sure if the entered number is even, append it to the even_list and if the entered number is odd append it to the odd_list. Keep that in mind you can only add 5 items in each list
+# Make sure once you enter all the 5 elements, calculate the sum of the list and return the maximum of the list.
+
+def evenAndOdd():
+    even_list = []
+    odd_list = []
+    while True:
+        num = eval(input("Enter a number between 1 - 50: "))
+        if num % 2 == 0 and len(even_list) <= 5:
+            even_list.append(num)
+        elif num % 2 != 0 and len(even_list) <= 5:
+            odd_list.append(num)
+        if len(even_list) == 5 and len(odd_list) == 5:
+            break
+    print("Even sum: ", sum(even_list))
+    print("Even list's maximum: ", max(even_list))
+    print("Odd sum: ", sum(odd_list))
+    print("Odd list's maximum: ", max(odd_list))
+
+# 9. Write a program to find out the occurrence of a specific character from an alphanumeric string. 
+# Sample input: 12abcbacbaba344ab
+# Expected output: a=5 b=5 c=2
+# NOTE: Make sure to avoid counting the occurrence of numeric values in the string.
+
+def occurrence(input):
+    my_dict = {}
+    for c in input:
+        if c == '0' or c == '1' or c == '2' or c == '3' or c == '4' or c == '5' or c == '6' or c == '7' or c == '8' or c == '9':
+            continue
+        else:
+            if c not in my_dict:
+                my_dict[c] = 1
+            else:
+                my_dict[c] += 1
+    for key,value in my_dict.items():
+        print(key, value)
+
+# 10. Generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
+
+def evenNums():
+    tup = (1,2,3,4,5,6,7,8,9,10)
+    l1 = []
+    for num in tup:
+        if num % 2 == 0:
+            l1.append(num)
+    new_tup = tuple(l1)
+    print(new_tup)
+
