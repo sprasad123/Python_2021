@@ -6,7 +6,7 @@ def exception():
     try:
         my_dict = {
             1: "Anna",
-            2: "Emily",
+            2: "Emily"
             3: "Austin"
         }
         raise SyntaxError
