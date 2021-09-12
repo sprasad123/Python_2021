@@ -1,0 +1,15 @@
+def elevator():
+    level = 1
+    while True:
+        newLevel = eval(input("Enter which level you'd like to go to: "))
+        if newLevel > 0 and newLevel < 6:
+            level = newLevel
+            print("Going to level {}".format(newLevel))
+            print("Elevator doors opening")
+            print("You have arrived")
+            break
+        else:
+            print("Incorrect floor. Try again.")
+            continue
+
+elevator()
